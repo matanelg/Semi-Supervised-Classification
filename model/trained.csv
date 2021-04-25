@@ -1,9 +1,9 @@
 file_name,classes
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/002_dog.jpg,Dog
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/039_dog.jpg,Dog
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/040_cat.jpg,Cat
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/002_cat.jpg,Cat
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/000_dog.jpg,Dog
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/000_cat.jpg,Cat
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/039_cat.jpg,Cat
-/home/matanel/GitProjects/Semi-Supervised-Classification/data/train/041_dog.jpg,Dog
+000_cat.jpg,Cat
+002_dog.jpg,Dog
+035_dog.jpg,Dog
+037_cat.jpg,Cat
+037_dog.jpg,Dog
+038_cat.jpg,Cat
+040_cat.jpg,Cat
+041_dog.jpg,Dog

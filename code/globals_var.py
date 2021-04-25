@@ -74,7 +74,7 @@ def Mark_Sets(Set):
     files_folder = os.path.join(base_path,'files')
     images_folder = f'{base_path}/data/{Set}'
     image_tagged_file = os.path.join(files_folder,f'{Set}_tags.csv')
-    image_dict = {Set : sorted(glob.glob(f'{images_folder}/*'))}
+    image_dict = {Set : sorted(os.listdir(images_folder))}
     tags_file = remo.generate_image_tags(tags_dictionary  = image_dict, 
                                          output_file_path = image_tagged_file)
     return images_folder, tags_file 
@@ -128,6 +128,7 @@ def Update_annotation(mode):
         dataset.export_annotations_to_file(annotation_file_path,
                                               annotation_set_id = main_annotaion_id,
                                               annotation_format='csv',
+                                              append_path = False,
                                               export_tags = False,
                                               filter_by_tags=[Set])
     if mode=='annotate_new_data':
@@ -156,8 +157,8 @@ class Data(Dataset):
         self.classes = Classes
         self.size = size
         self.transform = image_transform
-        a = 'train' if self.mode=='prediction' else self.mode
-        self.data = pd.read_csv(os.path.join(base_path,f'files/annotations_{a}.csv'))
+        self.a = 'train' if self.mode=='prediction' else self.mode
+        self.data = pd.read_csv(os.path.join(base_path,f'files/annotations_{self.a}.csv'))
         
         if self.mode == 'test' or self.mode == 'train':
             self.data = self.data.dropna()
@@ -172,7 +173,7 @@ class Data(Dataset):
         return len(self.data)
         
     def __getitem__(self,idx):
-        images_path = self.data.loc[idx, 'file_name']
+        images_path = f"{base_path}/data/{self.a}/{self.data.loc[idx, 'file_name']}"
         images = Image.open(images_path)
         
         X_set = self.transform(images)
@@ -272,7 +273,7 @@ def TrainTestModel(mode,epochs=1,batch_size=1,size=5):
                 y_pred = model(item[0].view(1,3,224,224))
                 prediction.append(Classes[torch.max(y_pred.data, 1)[1].item()])
                 prob.append(list(map(lambda x: x.item(),torch.exp(y_pred.data[0]))))
-                image_name.append(dataset.data.loc[i,'file_name'].split('/')[-1])
+                image_name.append(dataset.data.loc[i,'file_name'])
                 try:
                     true_val.append(Classes[item[1].item()])
                 except:
@@ -288,7 +289,6 @@ def TrainTestModel(mode,epochs=1,batch_size=1,size=5):
             df.to_csv(f'{base_path}/model/tested.csv', mode='a', index=False ,header=False)
         else:
             df.to_csv(f'{base_path}/model/predicted.csv', mode='a', index=False ,header=False)
-            ##df = drop(columns=list(Classes.values()))
             df.to_csv(f'{base_path}/files/prediction.csv', index=False)
         print(df)
         
