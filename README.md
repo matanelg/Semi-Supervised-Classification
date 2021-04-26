@@ -21,45 +21,45 @@ cd ./code
 ```
 
 ## Operation
-### Create/Add data from train & test folders to remo app.
+### 1. Create/Add data from train & test folders to remo app.
 ```python
 python main.py --mode=create
 ```
-### Tag your images 
+### 2. Tag your images 
 
-### Export annotation
+### 3. Export annotation
 ```python
 python main.py --mode=export_annotation
 ```
 
-### Train model
+### 4. Train model
 ```python
 python main.py --mode=train
 ```
 
-### Test model
+### 5. Test model
 ```python
 python main.py --mode=test
 ```
 
-### Predict untagged images in train folder
+### 6. Predict untagged images in train folder
 ```python
 python main.py --mode=inference --images_size=5
 ```
 
-### Upload new annotation set
+### 7. Upload new annotation set
 ```python
 python main.py --mode=upload_annotation
 ```
 
-### Fix images tagging
+### 8. Fix images wrong tag in remo app
 
-### Update annotation
+### 9. Update annotation
 ```python
 python main.py --mode=update_export_train
 ```
 
-### Delete annotation set
+### 10. Delete annotation set
 
 
 
