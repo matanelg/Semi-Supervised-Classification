@@ -6,23 +6,65 @@ We will be use [remo](https://remo.ai/docs/) package python library for annotati
 
 ## Installation
 
-1._Create python environment using the requirements.txt file.<br />
+1. Create python environment using the requirements.txt file.<br />
 
-2._You can follow [remo](https://remo.ai/docs/) guide installation or<br />
+2. You can follow [remo](https://remo.ai/docs/) guide installation or<br />
 ```bash
 pip install remo
 python -m remo_app init
 python -m remo_app
 ```
-3._Clone repository and move to code folder.
-```git
-git clone https://github.com/matanelg/Semi-Supervised-Classification.git
-``` 
+3. Clone repository and move to code folder.
 ```bash
+git clone https://github.com/matanelg/Semi-Supervised-Classification.git
 cd ./code
 ```
 
 ## Operation
+# Create/Add data from train & test folders to remo app.
+```python
+python main.py --mode=create
+```
+# Tag your images 
+
+# Export annotation
+```python
+python main.py --mode=export_annotation
+```
+
+# Train model
+```python
+python main.py --mode=train
+```
+
+# Test model
+```python
+python main.py --mode=test
+```
+
+# Predict untagged images in train folder
+```python
+python main.py --mode=inference --images_size=5
+```
+
+# Upload new annotation set
+```python
+python main.py --mode=upload_annotation
+```
+
+# Fix images tagging
+
+# Update annotation
+```python
+python main.py --mode=update_export_train
+```
+
+# Delete annotation set
+
+
+
+
+
 
 
 
