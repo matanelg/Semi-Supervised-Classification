@@ -21,7 +21,7 @@ cd ./code
 ```
 
 ## Operation
-# Create/Add data from train & test folders to remo app.
+### Create/Add data from train & test folders to remo app.
 ```python
 python main.py --mode=create
 ```
