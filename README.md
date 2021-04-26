@@ -25,41 +25,41 @@ cd ./code
 ```python
 python main.py --mode=create
 ```
-# Tag your images 
+### Tag your images 
 
-# Export annotation
+### Export annotation
 ```python
 python main.py --mode=export_annotation
 ```
 
-# Train model
+### Train model
 ```python
 python main.py --mode=train
 ```
 
-# Test model
+### Test model
 ```python
 python main.py --mode=test
 ```
 
-# Predict untagged images in train folder
+### Predict untagged images in train folder
 ```python
 python main.py --mode=inference --images_size=5
 ```
 
-# Upload new annotation set
+### Upload new annotation set
 ```python
 python main.py --mode=upload_annotation
 ```
 
-# Fix images tagging
+### Fix images tagging
 
-# Update annotation
+### Update annotation
 ```python
 python main.py --mode=update_export_train
 ```
 
-# Delete annotation set
+### Delete annotation set
 
 
 
