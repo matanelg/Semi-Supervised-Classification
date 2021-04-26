@@ -25,32 +25,39 @@ cd ./code
 ```python
 python main.py --mode=create
 ```
+This command also create test_tags and train_tags csv files that remo read and classified in app.
+
 ### 2. Tag your images 
 
 ### 3. Export annotation
 ```python
 python main.py --mode=export_annotation
 ```
+Save all tagged images in annotations_test & annotations_train csv files.
 
 ### 4. Train model
 ```python
 python main.py --mode=train
 ```
+You can also use --epochs and --batch_sise options the defualt is 1.
 
 ### 5. Test model
 ```python
 python main.py --mode=test
 ```
+Show probabilities of the classes.
 
 ### 6. Predict untagged images in train folder
 ```python
 python main.py --mode=inference --images_size=5
 ```
+Show predictions and probabilities.
 
 ### 7. Upload new annotation set
 ```python
 python main.py --mode=upload_annotation
 ```
+Create new annotation of prediction set and upload to remo app. 
 
 ### 8. Fix images wrong tag in remo app
 
@@ -58,8 +65,11 @@ python main.py --mode=upload_annotation
 ```python
 python main.py --mode=update_export_train
 ```
+Add the correct new tags to annotation_train.csv
 
 ### 10. Delete annotation set
+Keep tagging your data and return this loop until<br/>
+your model will be accurate enough to tagg the rest images by his own. 
 
 
 
