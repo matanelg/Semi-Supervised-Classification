@@ -1,5 +1,4 @@
-import os
-os.chdir('/home/matanel/Remo/Classification_Semi_Supervised/code')
+
 from globals_var import *
 
 
@@ -98,61 +97,3 @@ def main(mode,dataset,epochs,batch_size,images_size,prob):
 if __name__=='__main__':
     main()
 
-
-
-
-
-
-# dataset = Data(mode='train')
-# model = load_model()
-# model.eval()
-
-# if dataset.mode=='train':
-#     trained_data = pd.read_csv(f'{base_path}/model/trained.csv')
-#     dataset.data = pd.concat([dataset.data ,trained_data],axis=0)
-#     dataset.data.drop_duplicates(subset=['file_name'],keep=False,inplace=True)
-#     dataset.data.reset_index(drop=True, inplace=True)
-#     if len(dataset.data)==0:
-#         print("Model not trained. -> No new data to train on.")
-    
-#     criterion = nn.CrossEntropyLoss()
-#     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-#     dataset_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-#     epochs = epochs
-#     for i in range(epochs):
-#         for b, (X_train, y_train) in enumerate(dataset_loader,1):
-#             y_pred = model(X_train)
-#             loss = criterion(y_pred, y_train)
-#             optimizer.zero_grad()
-#             loss.backward()
-#             optimizer.step()
-#             print(f'epoch: {i:2}   loss: {loss.item():7.5f}')
-#     ## Save the trained model & what his trained on.
-#     torch.save(model, f'{base_path}/model/{model_name}')   
-#     dataset.data.to_csv(f'{base_path}/model/trained.csv', mode='a', index=False ,header=False)
-
-# elif dataset.mode=='test' or dataset.mode=='prediction':
-#     image_name, true_val, prob, prediction=[],[],[],[]
-#     for i ,item in enumerate(dataset):
-#         with torch.no_grad():
-#             y_pred = model(item[0].view(1,3,224,224))
-#             prediction.append(Classes[torch.max(y_pred.data, 1)[1].item()])
-#             prob.append(list(map(lambda x: float(f'{x.item():.3f}'),torch.exp(y_pred.data[0])))) #==#
-#             image_name.append(dataset.data.loc[i,'file_name'])
-#             try:
-#                 true_val.append(Classes[item[1].item()])
-#             except:
-#                 pass
-#             if i == len(dataset)-1:
-#                 break
-#     df = pd.DataFrame({'file_name':image_name})
-#     df[list(Classes.values())] = prob
-#     df['classes'] = prediction # predictions
-#     dataset.data = df
-#     if dataset.mode == 'test':
-#         df['True value'] = true_val
-#         df.to_csv(f'{base_path}/model/tested.csv', mode='a', index=False ,header=False)
-#     else:
-#         df.to_csv(f'{base_path}/model/predicted.csv', mode='a', index=False ,header=False)
-#         df.to_csv(f'{base_path}/files/prediction.csv', index=False)
-#     print(df)
