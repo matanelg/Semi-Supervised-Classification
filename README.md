@@ -49,7 +49,7 @@ Show probabilities of the classes.
 
 ### 6. Predict untagged images in train folder
 ```python
-python main.py --mode=inference --images_size=5
+python main.py --mode=prediction --images_size=5
 ```
 Show predictions and probabilities.
 
