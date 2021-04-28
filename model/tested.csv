@@ -1,8 +1,13 @@
-file_name,Cat,Dog,prediction,True value
-005_cat.jpg,0.48392152786254883,0.5160784125328064,Dog,Cat
-005_dog.jpg,0.48269250988960266,0.5173075199127197,Dog,Dog
-006_dog.jpg,0.4831392765045166,0.5168607234954834,Dog,Dog
-021_dog.jpg,0.4843563139438629,0.5156437754631042,Dog,Dog
-022_cat.jpg,0.48323360085487366,0.516766369342804,Dog,Cat
-022_dog.jpg,0.48418840765953064,0.5158116221427917,Dog,Dog
-024_cat.jpg,0.48381832242012024,0.5161815881729126,Dog,Cat
+file_name,Cat,Dog,prediction,classes
+003_dog.jpg,1.0,0.0,Cat,Dog
+005_cat.jpg,1.0,0.0,Cat,Cat
+005_dog.jpg,1.0,0.0,Cat,Dog
+021_cat.jpg,1.0,0.0,Cat,Cat
+021_dog.jpg,1.0,0.0,Cat,Dog
+023_cat.jpg,1.0,0.0,Cat,Cat
+003_dog.jpg,0.293,0.707,Dog,Dog
+005_cat.jpg,0.973,0.027,Cat,Cat
+005_dog.jpg,1.0,0.0,Cat,Dog
+021_cat.jpg,0.011,0.989,Dog,Cat
+021_dog.jpg,0.22,0.78,Dog,Dog
+023_cat.jpg,0.143,0.857,Dog,Cat
