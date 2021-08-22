@@ -29,6 +29,10 @@ This command also create test_tags and train_tags csv files that remo read and c
 
 ### 2. Tag your images 
 
+<p align="center">
+  <img src="https://github.com/matanelg/Semi-Supervised-Classification/blob/master/remo.png" width="100%" height="100%" />
+</p>
+
 ### 3. Export annotation
 ```python
 python main.py --mode=export_annotation
